@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+
+// Definindo a estrutura para uma carta
+typedef struct {
+    char estado[20];
+    char codigo[4];
+    char cidade[50];
+    float populacao; // em milhões
+    float area;      // em km²
+    float pib;       // em bilhões de reais
+    char ponto_turistico[50];
+} Carta;
+
+// Função para exibir uma carta
+void exibirCarta(Carta c, int numero) {
+    printf("--- CARTA %d ---\n", numero);
+    printf("Estado: %s\n", c.estado);
+    printf("Código: %s\n", c.codigo);
+    printf("Cidade: %s\n", c.cidade);
+    printf("População: %.2f milhões\n", c.populacao);
+    printf("Área: %.1f km²\n", c.area);
+    printf("PIB: R$ %.2f bilhões\n", c.pib);
+    printf("Ponto Turístico: %s\n\n", c.ponto_turistico);
+}
+
+int main() {
+    // Definindo as cartas
+    Carta carta1 = {"Acre", "R01", "Rio Branco", 0.89, 152.5, 23.7, "Palácio Rio Branco"};
+    Carta carta2 = {"Bahia", "S02", "Salvador", 2.88, 692.8, 63.1, "Pelourinho"};
+
+    printf("=== SUPER TRUNFO ===\n\n");
+    exibirCarta(carta1, 1);
+    exibirCarta(carta2, 2);
+
+    return 0;
+}
